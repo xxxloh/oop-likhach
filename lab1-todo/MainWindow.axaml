@@ -1,0 +1,107 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="TodoApp.MainWindow"
+        Title="Список дел"
+        Width="720" Height="520"
+        MinWidth="640" MinHeight="400"
+        Background="#F4F6FB"
+        WindowStartupLocation="CenterScreen">
+
+  <Window.Styles>
+    <Style Selector="TextBox">
+      <Setter Property="CornerRadius" Value="12" />
+      <Setter Property="Padding" Value="12,9" />
+      <Setter Property="MinHeight" Value="40" />
+      <Setter Property="Background" Value="White" />
+    </Style>
+
+    <Style Selector="ComboBox">
+      <Setter Property="CornerRadius" Value="12" />
+      <Setter Property="Padding" Value="12,9" />
+      <Setter Property="MinHeight" Value="40" />
+      <Setter Property="Background" Value="White" />
+    </Style>
+
+    <Style Selector="Button">
+      <Setter Property="CornerRadius" Value="12" />
+      <Setter Property="Padding" Value="18,9" />
+      <Setter Property="MinHeight" Value="40" />
+      <Setter Property="Background" Value="#E6EAF4" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#D5DBEA" />
+    </Style>
+    <Style Selector="Button.primary">
+      <Setter Property="Background" Value="#4F6EF7" />
+      <Setter Property="Foreground" Value="White" />
+    </Style>
+    <Style Selector="Button.primary:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#3E5BE0" />
+      <Setter Property="Foreground" Value="White" />
+    </Style>
+    <Style Selector="Button.danger">
+      <Setter Property="Foreground" Value="#C0392B" />
+    </Style>
+
+    <Style Selector="ListBoxItem">
+      <Setter Property="CornerRadius" Value="10" />
+      <Setter Property="Padding" Value="12,10" />
+      <Setter Property="Margin" Value="0,3" />
+    </Style>
+    <Style Selector="ListBoxItem.done">
+      <Setter Property="Foreground" Value="#18890c" />
+      <Setter Property="Background" Value="#edfce9" />
+    </Style>
+    <Style Selector="ListBoxItem.overdue">
+      <Setter Property="Foreground" Value="#B3261E" />
+      <Setter Property="Background" Value="#FDE8E8" />
+    </Style>
+  </Window.Styles>
+
+  <DockPanel Margin="18">
+
+    <StackPanel DockPanel.Dock="Top" Margin="0,0,0,14" Spacing="10">
+
+
+      <Grid ColumnDefinitions="*,200,Auto">
+        <TextBox x:Name="TitleBox" Grid.Column="0" Margin="0,0,10,0"
+                 Watermark="Название задачи" />
+        <TextBox x:Name="DueBox" Grid.Column="1" Margin="0,0,10,0"
+                 Watermark="Срок дд.мм.гггг" />
+        <Button x:Name="AddButton" Grid.Column="2" Content="Добавить"
+                Classes="primary" IsDefault="True" Click="AddButton_Click" />
+      </Grid>
+
+      <Grid ColumnDefinitions="*,160,Auto">
+        <TextBox x:Name="SearchBox" Grid.Column="0" Margin="0,0,10,0"
+                 Watermark="Поиск по названию" />
+        <ComboBox x:Name="FilterBox" Grid.Column="1" Margin="0,0,10,0"
+                  HorizontalAlignment="Stretch" SelectedIndex="0">
+          <ComboBoxItem Content="Все" />
+          <ComboBoxItem Content="Активные" />
+          <ComboBoxItem Content="Выполненные" />
+          <ComboBoxItem Content="Невыполненные" />
+        </ComboBox>
+        <CheckBox x:Name="SortCheck" Grid.Column="2" Content="Сортировать по сроку"
+                  VerticalAlignment="Center" />
+      </Grid>
+
+    </StackPanel>
+
+    <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Spacing="10"
+                Margin="0,14,0,0">
+      <Button x:Name="DoneButton" Content="Выполнено" Click="DoneButton_Click" />
+      <Button x:Name="RenameButton" Content="Переименовать" Click="RenameButton_Click" />
+      <Button x:Name="DeleteButton" Content="Удалить" Classes="danger"
+              Click="DeleteButton_Click" />
+    </StackPanel>
+
+    <Border CornerRadius="16" Background="White" BorderBrush="#D9DEEA"
+            BorderThickness="1" Padding="8" ClipToBounds="True">
+      <ListBox x:Name="TaskList" Background="Transparent" BorderThickness="0" />
+    </Border>
+
+  </DockPanel>
+</Window>
