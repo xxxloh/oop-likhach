@@ -1,0 +1,92 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Chat.Client.ChatWindow"
+        Title="Онлайн-чат"
+        Width="920" Height="660"
+        MinWidth="640" MinHeight="420"
+        Background="#F4F6FB"
+        WindowStartupLocation="CenterScreen">
+
+  <Window.Styles>
+    <Style Selector="Button">
+      <Setter Property="CornerRadius" Value="12" />
+      <Setter Property="Padding" Value="16,8" />
+      <Setter Property="MinHeight" Value="38" />
+      <Setter Property="Background" Value="#E6EAF4" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#D5DBEA" />
+    </Style>
+    <Style Selector="Button.primary">
+      <Setter Property="Background" Value="#4F6EF7" />
+      <Setter Property="Foreground" Value="White" />
+    </Style>
+    <Style Selector="Button.primary:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#3E5BE0" />
+      <Setter Property="Foreground" Value="White" />
+    </Style>
+    <Style Selector="TextBox">
+      <Setter Property="CornerRadius" Value="12" />
+      <Setter Property="Padding" Value="12,8" />
+      <Setter Property="MinHeight" Value="38" />
+    </Style>
+    <Style Selector="ListBoxItem">
+      <Setter Property="CornerRadius" Value="8" />
+      <Setter Property="Padding" Value="10,6" />
+    </Style>
+  </Window.Styles>
+
+  <Grid Margin="18" RowDefinitions="Auto,*,Auto" ColumnDefinitions="*,230">
+
+    <!-- Шапка -->
+    <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" ColumnDefinitions="*,Auto" Margin="0,0,0,12">
+      <StackPanel Grid.Column="0">
+        <TextBlock x:Name="TitleText" FontSize="20" FontWeight="SemiBold" Foreground="#1F2A44" />
+        <TextBlock x:Name="StatusText" Foreground="#6B7490" />
+      </StackPanel>
+      <Button Grid.Column="1" x:Name="LeaveButton" Content="Выйти" Click="LeaveButton_Click" />
+    </Grid>
+
+    <!-- Лента сообщений -->
+    <Border Grid.Row="1" Grid.Column="0" CornerRadius="16" Background="White"
+            BorderBrush="#D9DEEA" BorderThickness="1" ClipToBounds="True">
+      <ScrollViewer x:Name="FeedScroll" Padding="14">
+        <StackPanel x:Name="FeedPanel" Spacing="6" />
+      </ScrollViewer>
+    </Border>
+
+    <!-- Кто онлайн -->
+    <Border Grid.Row="1" Grid.Column="1" Margin="12,0,0,0" CornerRadius="16" Background="White"
+            BorderBrush="#D9DEEA" BorderThickness="1" ClipToBounds="True">
+      <DockPanel Margin="12">
+        <TextBlock DockPanel.Dock="Top" x:Name="OnlineHeader" Text="Онлайн" FontWeight="SemiBold"
+                   Foreground="#1F2A44" Margin="0,0,0,8" />
+        <TextBlock DockPanel.Dock="Bottom" TextWrapping="Wrap" Foreground="#6B7490" FontSize="12"
+                   Margin="0,8,0,0"
+                   Text="Выберите ник в списке, чтобы написать личное сообщение." />
+        <ListBox x:Name="UsersList" Background="Transparent"
+                 SelectionChanged="UsersList_SelectionChanged" />
+      </DockPanel>
+    </Border>
+
+    <!-- Ввод -->
+    <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,12,0,0" Spacing="8">
+      <Border x:Name="RecipientBar" IsVisible="False" CornerRadius="10" Background="#FFF4D6"
+              Padding="12,6">
+        <Grid ColumnDefinitions="*,Auto">
+          <TextBlock x:Name="RecipientText" VerticalAlignment="Center" Foreground="#7A5B00" />
+          <Button Grid.Column="1" x:Name="ClearRecipientButton" Content="Написать всем"
+                  MinHeight="30" Padding="12,4" Click="ClearRecipientButton_Click" />
+        </Grid>
+      </Border>
+      <Grid ColumnDefinitions="*,Auto">
+        <TextBox x:Name="InputBox" MaxLength="2000" />
+        <Button Grid.Column="1" x:Name="SendButton" Content="Отправить" Classes="primary"
+                Margin="10,0,0,0" Click="SendButton_Click" />
+      </Grid>
+    </StackPanel>
+
+  </Grid>
+</Window>
