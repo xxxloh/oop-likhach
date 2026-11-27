@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "HMISd5TP8a4=",
+  "success": true,
+  "projectFilePath": "/Users/alalihac/Downloads/lab3-chat/Chat.Server/Chat.Server.csproj",
+  "expectedPackageFiles": [
+    "/Users/alalihac/.nuget/packages/microsoft.netcore.app.ref/8.0.32/microsoft.netcore.app.ref.8.0.32.nupkg.sha512",
+    "/Users/alalihac/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.32/microsoft.aspnetcore.app.ref.8.0.32.nupkg.sha512",
+    "/Users/alalihac/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.32/microsoft.netcore.app.host.osx-arm64.8.0.32.nupkg.sha512"
+  ],
+  "logs": []
+}

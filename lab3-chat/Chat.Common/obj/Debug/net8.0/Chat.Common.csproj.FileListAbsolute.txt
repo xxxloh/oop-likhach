@@ -1,0 +1,11 @@
+/Users/alalihac/Downloads/lab3-chat/Chat.Common/bin/Debug/net8.0/Chat.Common.deps.json
+/Users/alalihac/Downloads/lab3-chat/Chat.Common/bin/Debug/net8.0/Chat.Common.dll
+/Users/alalihac/Downloads/lab3-chat/Chat.Common/bin/Debug/net8.0/Chat.Common.pdb
+/Users/alalihac/Downloads/lab3-chat/Chat.Common/obj/Debug/net8.0/Chat.Common.GeneratedMSBuildEditorConfig.editorconfig
+/Users/alalihac/Downloads/lab3-chat/Chat.Common/obj/Debug/net8.0/Chat.Common.AssemblyInfoInputs.cache
+/Users/alalihac/Downloads/lab3-chat/Chat.Common/obj/Debug/net8.0/Chat.Common.AssemblyInfo.cs
+/Users/alalihac/Downloads/lab3-chat/Chat.Common/obj/Debug/net8.0/Chat.Common.csproj.CoreCompileInputs.cache
+/Users/alalihac/Downloads/lab3-chat/Chat.Common/obj/Debug/net8.0/Chat.Common.dll
+/Users/alalihac/Downloads/lab3-chat/Chat.Common/obj/Debug/net8.0/refint/Chat.Common.dll
+/Users/alalihac/Downloads/lab3-chat/Chat.Common/obj/Debug/net8.0/Chat.Common.pdb
+/Users/alalihac/Downloads/lab3-chat/Chat.Common/obj/Debug/net8.0/ref/Chat.Common.dll
